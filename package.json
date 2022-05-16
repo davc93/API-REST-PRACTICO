@@ -1,0 +1,19 @@
+{
+  "name": "api_rest_practico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davc93/API_REST_PRACTICO.git"
+  },
+  "author": "Diego Vergara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davc93/API_REST_PRACTICO/issues"
+  },
+  "homepage": "https://github.com/davc93/API_REST_PRACTICO#readme"
+}

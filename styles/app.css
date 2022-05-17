@@ -1,0 +1,42 @@
+.bi-whatsapp::before { content: "\f618"; }
+.bi-facebook::before { content: "\f618"; }
+.bi-instagram::before { content: "\f618"; }
+
+
+/* Color Theme Swatches in Hex */
+.Water-and-Rust-1-hex { color: #151F30; }
+.Water-and-Rust-2-hex { color: #103778; }
+.Water-and-Rust-3-hex { color: #0593A2; }
+.Water-and-Rust-4-hex { color: #FF7A48; }
+.Water-and-Rust-5-hex { color: #E3371E; }
+
+/* Color Theme Swatches in RGBA */
+.Water-and-Rust-1-rgba { color: rgba(21, 31, 48, 1); }
+.Water-and-Rust-2-rgba { color: rgba(16, 55, 120, 1); }
+.Water-and-Rust-3-rgba { color: rgba(5, 147, 162, 1); }
+.Water-and-Rust-2-hex { color: #103778; }
+.Water-and-Rust-4-rgba { color: rgba(255, 122, 72, 1); }
+.Water-and-Rust-5-rgba { color: rgba(227, 55, 30, 1); }
+
+
+html{
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2{
+    color: #103778;
+    font-size: 3rem;
+
+}
+
+h3 {
+    font-size: 2.2rem;
+    color: #103778;
+}
+

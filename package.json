@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/davc93/API_REST_PRACTICO/issues"
   },
-  "homepage": "https://github.com/davc93/API_REST_PRACTICO#readme"
+  "homepage": "https://github.com/davc93/API_REST_PRACTICO#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.8.2"
+  }
 }

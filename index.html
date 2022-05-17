@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./node_modules/bootstrap-icons/icons/badge-4k.svg" type="image/x-icon">
     <link rel="stylesheet" href="./styles/app.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <title>Platzi Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Platzi Movies</h1>
-      <i class="bi-whatsapp" style="color:green; font-size: 50px;"></i>
-      <i class="bi-facebook" style="color:green; font-size: 50px;"></i>
-      <i class="bi-instagram" style="color:green; font-size: 50px;"></i>
-      <i class="bi-arrow-right" style="color:green; font-size: 50px;"></i>
-    
-      <script src="/src/main.js"></script>
+    <!-- <h1>Platzi Movies</h1>
+      <i class="bi-badge-4k" style="color:#151F30; font-size: 50px;"></i>
+      <script src="/src/main.js"></script> -->
 </body>
+    <header>
+
+    </header>
     <section class="movie-detail">
         <article>
             <div class="movie-detail__img">
-                <img src="" alt="">
+                <img src="" alt="Foto de pelicula seleccionada">
             </div>
             <div class="movie_detail__description">
                 <h2>[titulo]</h2>
@@ -33,24 +36,59 @@
         <div class="similar-movies--grid">
             <div class="similar-movies__text">
             </div>
-            <div class="similar-movies__movies-carrousel"></div>
+            <div class="similar-movies__movies-carrousel">
+                <img src="" alt="pelicula similar">
+            </div>
         </div>
     </section>
-    <section class="tendencies">
+    <section class="tendencies" id="tendencies">
         <div class="tendencies--container">
             <div class="tendencies__text">
-                <h2>[Titulo]</h2>
+                <h3>Tendencias</h3>
             </div>
-            <div class="tendecies__img">
-                <img src="" alt="Imagen de peliculo de tendencia">
+            <div class="tendencies__img-list">
+                <div class="tendencies__img-list img-container">
+                </div>
             </div>
-            <div class="tendencies__moving-icon"></div>
+            <div class="tendencies__moving-icon">
+                <i class="bi-circle-fill" style="color:#FF7A48; font-size: 12px;"></i>
+                <i class="bi-circle-fill" style="color:#FF7A48; font-size: 12px;"></i>
+                <i class="bi-circle-fill" style="color:#FF7A48; font-size: 12px;"></i>
+            </div>
         </div>
     </section>
     <section class="categories-view">
         <div class="categories-view--container">
-            <div class="categories-view__text"></div>
-            <div class="categories-view__list-categories"></div>
+            <div class="categories-view__text">
+                <h3>Categorías</h3>
+            </div>
+            <div class="categories-view__list-categories">
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Acción</p>
+                </div>
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Aventura</p>
+                </div>
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Drama</p>
+                </div>
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Comedia</p>
+                </div>
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Romance</p>
+                </div>
+                <div class="list-box">
+                    <button type="button"></button>
+                    <p>Musical</p>
+                </div>
+
+            </div>
         </div>
     </section>
     <section class="search-section">
@@ -70,26 +108,30 @@
             <div class="search-section__text">
                 <h3>Buscar</h3>
             </div>
-            <div class="search-section__input">
-                <input type="text" placeholder="Ingresa tu pelicula">
-                <button type="button" class="primary-button"></button>
+            <div class="search-section__form">
+                <form action="">
+                    <input type="text" placeholder="Ingresa tu pelicula">
+                    <button type="button" class="primary-button"></button>
+                </form>
             </div>
         </div>
     </section>
     <section class="movies-grid">
-        
-    </section>
-    <section class="search-section--categories-action">
-        <div class="search-section--container">
-            <div class="search-section__text">
-                <h3>Buscar</h3>
+        <section class="search-section--categories-action">
+            <div class="search-section--container">
+                <div class="search-section__text">
+                    <h3>Buscar</h3>
+                </div>
+                <div class="search-section__form">
+                    <form action="">
+                        <input type="text" placeholder="Ingresa tu pelicula">
+                        <button type="button" class="primary-button"></button>
+                    </form>
+                </div>
             </div>
-            <div class="search-section__input">
-                <input type="text" placeholder="Ingresa tu pelicula">
-                <button type="button" class="primary-button"></button>
-            </div>
-        </div>
+        </section>
     </section>
+    
     <section class="movies-grid--action">
     </section>
 
@@ -98,12 +140,14 @@
             <div class="search-section__text">
                 <h3>Buscar</h3>
             </div>
-            <div class="search-section__input">
-                <input type="text" placeholder="Ingresa tu pelicula">
-                <button type="button" class="primary-button"></button>
+            <div class="search-section__form">
+                <form action="">
+                    <input type="text" placeholder="Ingresa tu pelicula">
+                    <button type="button" class="primary-button"></button>
+                </form>
             </div>
         </div>
     </section>
     <section class="movies-grid--adventure"></section>
-
+    <script src="./src/main.js"></script>
 </html>

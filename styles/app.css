@@ -40,6 +40,9 @@ h1,h2{
 }
 body{
     background-color: #ffffff;
+    display: grid;
+    place-items: center;
+    /* position: relative; */
 }
 h3 {
     font-size: 1.6rem;
@@ -59,7 +62,7 @@ p{
 }
 header {
     height: 80px;
-    min-width: 360px;
+    width: 100%;
 }
 nav {
     position: relative;
@@ -71,10 +74,6 @@ nav {
     left: 30px;
 }
 
-section > div,section > article{
-    display: grid;
-    justify-content: center;
-}
 
 .tendencies {
     text-align: center;
@@ -109,10 +108,34 @@ section > div,section > article{
     margin: 0 4px;
 }
 
+.movie_detail{
+    width: 100%;
+}
+
+.movie_detail__description {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+    row-gap: 20px;
+    
+}
+
+.movie_detail__description p:nth-child(2){
+    justify-self: end;
+}
+
+.movie_detail__description p:nth-child(3){
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .categories-view{
 
 
     padding: 20px 0;
+    
 }
 
 .categories-view__text{
@@ -128,18 +151,21 @@ section > div,section > article{
 }
 
 .search-section{
-
-    padding: 20px 0;
+    position: relative;
+    left: -40px;
+    padding: 20px;
 }
 
-.search-section .search-section--container{
+.search-section--container{
+    display: flex;
+    flex-direction: column;
     row-gap: 10px;
 }
 
 .search-section__input{
 
     background-color: #c4c4c4;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 5px;
 }
 .search-section input{

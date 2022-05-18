@@ -53,6 +53,10 @@ p{
 
 }
 
+.inactive{
+
+    display: none;
+}
 header {
     height: 80px;
 }
@@ -64,6 +68,7 @@ section > div,section > article{
 
 .tendencies {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .tendencies__img-list{
@@ -93,6 +98,17 @@ section > div,section > article{
 
     margin: 0 4px;
 }
+
+.categories-view{
+
+
+    padding-top: 10px;
+}
+
+.categories-view__text{
+    padding-bottom: 20px;
+}
+
 .categories-view__list-categories{
 
     display: grid;
@@ -102,6 +118,7 @@ section > div,section > article{
 }
 .list-box{
     display: flex;
+    padding: 3px 0;
 }
 
 .list-box button{

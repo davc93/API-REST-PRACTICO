@@ -1,4 +1,4 @@
-const API_KEY = '5524b4c77971b4bb70dff079febbbb06';
+const API_URL_CATEGORIES = 'https://api.themoviedb.org/3/genre/';
 const API_URL_TENDENCIES = 'https://api.themoviedb.org/3/trending/';
 async function getTrendingMoviesPreview(){
 
@@ -18,5 +18,27 @@ async function getTrendingMoviesPreview(){
         tendenciesMoviesContainer.appendChild(movieContainer);
     });
 }
+async function getCategoriesMoviesPreview(){
+
+    const res = await fetch(`${API_URL_CATEGORIES}movie/list?api_key=${API_KEY}`);
+    const data = await res.json();
+    const categories = data.genres;
+    console.log({data, categories});
+    categories.forEach(element => {
+        const categoriesContainer = document.querySelector('#categories .categories-view__list-categories');
+
+        const categoryContainer = document.createElement('div');
+        categoryContainer.classList.add('list-box');
+        const categoryText = document.createElement('p');
+        categoryText.innerText = element.name;
+        const categoryButton = document.createElement('button');
+        categoryButton.setAttribute('type','button');
+        categoryContainer.appendChild(categoryButton);
+        categoryContainer.appendChild(categoryText);
+        categoriesContainer.appendChild(categoryContainer);
+    });
+}
 
 getTrendingMoviesPreview();
+
+getCategoriesMoviesPreview();

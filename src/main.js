@@ -16,6 +16,7 @@ async function getTrendingMoviesPreview(){
     const { data } = await api('trending/movie/day');
     const movies = data.results;
     console.log({data, movies});
+    document.querySelector('#tendencies .tendencies__img-list .img-container').innerHTML = "";
     movies.forEach(element => {
         const tendenciesMoviesContainer = document.querySelector('#tendencies .tendencies__img-list .img-container');
 
@@ -32,10 +33,10 @@ async function getCategoriesMoviesPreview(){
 
     const {data} = await api('genre/movie/list');
     const categories = data.genres;
+    document.querySelector('#categories .categories-view__list-categories').innerHTML = "";
     console.log({data, categories});
     categories.forEach(element => {
         const categoriesContainer = document.querySelector('#categories .categories-view__list-categories');
-
         const categoryContainer = document.createElement('div');
         categoryContainer.classList.add('list-box');
         const categoryText = document.createElement('p');

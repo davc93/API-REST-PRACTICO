@@ -59,6 +59,16 @@ p{
 }
 header {
     height: 80px;
+    min-width: 360px;
+}
+nav {
+    position: relative;
+    display: flex;
+}
+.nav-left{
+    position: absolute;
+    top: 20px;
+    left: 30px;
 }
 
 section > div,section > article{
@@ -102,7 +112,7 @@ section > div,section > article{
 .categories-view{
 
 
-    padding-top: 10px;
+    padding: 20px 0;
 }
 
 .categories-view__text{
@@ -116,6 +126,30 @@ section > div,section > article{
     grid-auto-rows: auto;
     column-gap: 10px;
 }
+
+.search-section{
+
+    padding: 20px 0;
+}
+
+.search-section .search-section--container{
+    row-gap: 10px;
+}
+
+.search-section__input{
+
+    background-color: #c4c4c4;
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-section input{
+
+    background-color: #c4c4c4;
+    outline: none;
+    border: none;
+}
+
+
 .list-box{
     display: flex;
     padding: 3px 0;

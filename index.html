@@ -18,9 +18,14 @@
       <script src="/src/main.js"></script> -->
 </body>
     <header>
-
+        <nav>
+            <div class="nav-left" id="nav-left">
+                <i class="bi-chevron-left" onclick="homePage()" style="font-size: 30px; color: #FF7A48; font-weight: bold; cursor: pointer;"></i>
+            </div>
+            <div class="nav-right"></div>
+        </nav>
     </header>
-    <section class="movie-detail inactive">
+    <section class="movie-detail" id="movie-detail">
         <article>
             <div class="movie-detail__img">
                 <img src="" alt="Foto de pelicula seleccionada">
@@ -32,7 +37,7 @@
             </div>
         </article>
     </section>
-    <section class="similar-movies inactive">
+    <section class="similar-movies" id="similar-movies">
         <div class="similar-movies--grid">
             <div class="similar-movies__text">
             </div>
@@ -91,19 +96,22 @@
             </div>
         </div>
     </section>
-    <section class="search-section">
+    <section class="search-section" id="search-section">
         <div class="search-section--container">
             <div class="search-section__text">
                 <h3>Buscar</h3>
             </div>
             <div class="search-section__input">
                 <input type="text" placeholder="Ingresa tu pelicula">
-                <button type="button" class="primary-button"></button>
+                <i class="bi-search" style="color:#FF7A48;font-size: 14px;"></i>    
             </div>
         </div>
     </section>
 
-    <section class="search-section--categories-general inactive">
+    <section class="movies-grid" id="movies-grid">
+    </section>
+
+    <section class="search-section--categories--action" id="search-section--categories--action">
         <div class="search-section--container">
             <div class="search-section__text">
                 <h3>Buscar</h3>
@@ -116,26 +124,10 @@
             </div>
         </div>
     </section>
-    <section class="movies-grid inactive">
-        <section class="search-section--categories-action">
-            <div class="search-section--container">
-                <div class="search-section__text">
-                    <h3>Buscar</h3>
-                </div>
-                <div class="search-section__form">
-                    <form action="">
-                        <input type="text" placeholder="Ingresa tu pelicula">
-                        <button type="button" class="primary-button"></button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </section>
-    
-    <section class="movies-grid--action inactive">
+    <section class="movies-grid--action" id="movies-grid--action">
     </section>
 
-    <section class="search-section--categories-adventure inactive">
+    <section class="search-section--categories--adventure" id="search-section--categories--adventure">
         <div class="search-section--container">
             <div class="search-section__text">
                 <h3>Buscar</h3>
@@ -148,9 +140,10 @@
             </div>
         </div>
     </section>
-    <section class="movies-grid--adventure inactive"></section>
+    <section class="movies-grid--adventure" id="movies-grid--adventure"></section>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
+    <script src="./src/nodes.js"></script>
     <script src="./src/navigation.js"></script>
     <script src="./src/main.js"></script>
 </html>

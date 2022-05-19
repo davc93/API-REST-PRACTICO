@@ -1,9 +1,18 @@
+searchBtn.addEventListener('click',() => {
+    location.hash = `#search=${searchInput.value}`;
+})
+trendsBtn.addEventListener('click',() => {
+    location.hash = `#trends`;
+})
 window.addEventListener('DOMContentLoaded',navigator,false);
 window.addEventListener('hashchange',navigator,false)
+flecha.addEventListener('click',()=> {
+    history.back();
+})
 function navigator(){
     
-    if(location.hash.startsWith('#tendencies')){
-        tendenciesPage();
+    if(location.hash.startsWith('#trends')){
+        trendsPage();
     } else if(location.hash.startsWith('#search=')){
 
         searchPage();
@@ -17,23 +26,24 @@ function navigator(){
 
         homePage();
     }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 }
+
 
 function homePage(){
 
+    navLeftCategorieName.innerText = '';
     console.log("home");
     tendencies.classList.remove('inactive');
     categories.classList.remove('inactive');
     searchSection.classList.remove('inactive');
-    flecha.classList.add('inactive');
     movieDetail.classList.add('inactive');
     similarMovies.classList.add('inactive');
-    moviesGrid.classList.add('inactive');
-    searchSectionCategoriesAction.classList.add('inactive');
-    moviesGridAction.classList.add('inactive');
-    searchSectionCategoriesAdventure.classList.add('inactive');
-    moviesGridAdventure.classList.add('inactive');
+    moviesGridCategories.classList.add('inactive');
 
+    flecha.classList.add('inactive');
+    flecha.classList.add('inactive');
     getTrendingMoviesPreview();
     getCategoriesMoviesPreview();
 }
@@ -47,12 +57,8 @@ function movieDetailsPage(){
 
     movieDetail.classList.remove('inactive');
     similarMovies.classList.remove('inactive');
-    moviesGrid.classList.add('inactive');
-    searchSectionCategoriesAction.classList.add('inactive');
-    moviesGridAction.classList.add('inactive');
-    searchSectionCategoriesAdventure.classList.add('inactive');
-    moviesGridAdventure.classList.add('inactive');
 
+    moviesGridCategories.classList.add('inactive');
     flecha.classList.remove('inactive');
     
 }
@@ -66,11 +72,46 @@ function searchPage(){
     searchSection.classList.remove('inactive');
     movieDetail.classList.add('inactive');
     similarMovies.classList.add('inactive');
-    moviesGrid.classList.remove('inactive');
-    searchSectionCategoriesAction.classList.add('inactive');
-    moviesGridAction.classList.add('inactive');
-    searchSectionCategoriesAdventure.classList.add('inactive');
-    moviesGridAdventure.classList.add('inactive');
+    moviesGridCategories.classList.remove('inactive');
     flecha.classList.remove('inactive');
+
+
+    // [#search, 'platzi']
+    const [_, searchQuery] = location.hash.split('=');
+    getMoviesBySearch(searchQuery);
+    
+}
+
+function categoryPage(){
+
+
+    console.log("categoryPage");
+    tendencies.classList.add('inactive');
+    categories.classList.add('inactive');
+    searchSection.classList.add('inactive');
+    movieDetail.classList.add('inactive');
+    similarMovies.classList.add('inactive');
+    moviesGridCategories.classList.remove('inactive');
+    flecha.classList.remove('inactive');
+    
+    const [_, categoryData] = location.hash.split('=');
+    const [categoryId, categoryName] = categoryData.split('-');
+    getMoviesByCategory(categoryId, categoryName);
+    
+}
+
+function trendsPage(){
+
+
+    console.log("categoryPage");
+    tendencies.classList.add('inactive');
+    categories.classList.add('inactive');
+    searchSection.classList.add('inactive');
+    movieDetail.classList.add('inactive');
+    similarMovies.classList.add('inactive');
+    moviesGridCategories.classList.remove('inactive');
+    flecha.classList.remove('inactive');
+    
+    getTrendingMovies();
     
 }

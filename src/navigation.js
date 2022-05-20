@@ -10,7 +10,6 @@ flecha.addEventListener('click',()=> {
     history.back();
 })
 function navigator(){
-    
     if(location.hash.startsWith('#trends')){
         trendsPage();
     } else if(location.hash.startsWith('#search=')){
@@ -35,6 +34,7 @@ function homePage(){
 
     navLeftCategorieName.innerText = '';
     console.log("home");
+    header.setAttribute('style','');
     tendencies.classList.remove('inactive');
     categories.classList.remove('inactive');
     searchSection.classList.remove('inactive');
@@ -51,6 +51,8 @@ function homePage(){
 function movieDetailsPage(){
 
     console.log("Movie details");
+
+    header.setAttribute('style','height:0;');
     tendencies.classList.add('inactive');
     categories.classList.add('inactive');
     searchSection.classList.add('inactive');
@@ -60,6 +62,8 @@ function movieDetailsPage(){
 
     moviesGridCategories.classList.add('inactive');
     flecha.classList.remove('inactive');
+    [_, movieId] = location.hash.split('=');
+    getMovieById(movieId);
     
 }
 
@@ -67,6 +71,8 @@ function searchPage(){
 
 
     console.log("SearchPage");
+
+    header.setAttribute('style','');
     tendencies.classList.add('inactive');
     categories.classList.add('inactive');
     searchSection.classList.remove('inactive');
@@ -86,6 +92,8 @@ function categoryPage(){
 
 
     console.log("categoryPage");
+
+    header.setAttribute('style','');
     tendencies.classList.add('inactive');
     categories.classList.add('inactive');
     searchSection.classList.add('inactive');
@@ -104,6 +112,8 @@ function trendsPage(){
 
 
     console.log("categoryPage");
+
+    header.setAttribute('style','');
     tendencies.classList.add('inactive');
     categories.classList.add('inactive');
     searchSection.classList.add('inactive');

@@ -29,22 +29,19 @@
     <section class="movie-detail" id="movie-detail">
         <article>
             <div class="movie-detail__img">
-                <img src="" alt="Foto de pelicula seleccionada">
+                <img src="" alt="Foto de pelicula seleccionada" id="movie-detail__img">
             </div>
-            <div class="movie_detail__description">
-                <h2>[titulo]</h2>
-                <p><i class="bi-star" style="color: #FF7A48; font-size: 20px;" ></i><i class="bi-star" style="color: #FF7A48; font-size: 20px;" ></i><i class="bi-star" style="color: #FF7A48; font-size: 20px;" ></i><i class="bi-star" style="color: #FF7A48; font-size: 20px;" ></i><i class="bi-star" style="color: #FF7A48; font-size: 20px;" ></i></p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, illo labore non porro modi dolor aliquam vitae eligendi. Accusantium, porro. Inventore debitis id mollitia assumenda animi illo expedita fugit atque.</p>
+            <div class="movie-detail__description">
+                <h2 id="movie-detail__title"></h2>
+                <p id="movie-detail__rate"></p>
+                <p id="movie-detail__overview"></p>
             </div>
+            <div id="movie-detail__categories" class="movie-detail__categories"></div>
         </article>
     </section>
     <section class="similar-movies" id="similar-movies">
-        <div class="similar-movies--grid">
-            <div class="similar-movies__text">
-            </div>
-            <div class="similar-movies__movies-carrousel">
-                <img src="" alt="pelicula similar">
-            </div>
+        <h2>Peliculas similares</h2>
+        <div class="similar-movies--grid" id="similar-movies__img">
         </div>
     </section>
     <section class="tendencies" id="tendencies">
@@ -63,7 +60,7 @@
             </div>
             <button onclick="trendsPage()" id="trends" class="primary-button"><p>Ver más</p></button>
         </div>
-    </section>
+    </section>  
     <section class="categories-view" id="categories">
         <div class="categories-view--container">
             <div class="categories-view__text">

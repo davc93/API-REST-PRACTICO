@@ -22,6 +22,28 @@ function createMovies(movies,container){
         movieImg.setAttribute('src',`https://image.tmdb.org/t/p/w300/${movie.poster_path}`);
         movieContainer.appendChild(movieImg);
         container.appendChild(movieContainer);
+        movieContainer.addEventListener('click',()=> {
+            location.hash = `movie=${movie.id}`;
+        })
+    });
+}
+
+function createCategories(categories,container){
+
+    container.innerHTML = "";
+    categories.forEach(categorie => {
+        const categoryContainer = document.createElement('div');
+        categoryContainer.classList.add('list-box');
+        const categoryText = document.createElement('p');
+        categoryText.innerText = categorie.name;
+        const categoryButton = document.createElement('button');
+        categoryButton.setAttribute('type','button');
+        categoryButton.addEventListener('click', () => {
+            location.hash = `#category=${categorie.id}-${categorie.name}`;
+        });
+        categoryContainer.appendChild(categoryButton);
+        categoryContainer.appendChild(categoryText);
+        container.appendChild(categoryContainer);
     });
 }
 
@@ -37,23 +59,8 @@ async function getCategoriesMoviesPreview(){
 
     const {data} = await api('genre/movie/list');
     const categories = data.genres;
-    document.querySelector('#categories .categories-view__list-categories').innerHTML = "";
-    console.log({data, categories});
-    categories.forEach(element => {
-        const categoriesContainer = document.querySelector('#categories .categories-view__list-categories');
-        const categoryContainer = document.createElement('div');
-        categoryContainer.classList.add('list-box');
-        const categoryText = document.createElement('p');
-        categoryText.innerText = element.name;
-        const categoryButton = document.createElement('button');
-        categoryButton.setAttribute('type','button');
-        categoryButton.addEventListener('click', () => {
-            location.hash = `#category=${element.id}-${element.name}`;
-        });
-        categoryContainer.appendChild(categoryButton);
-        categoryContainer.appendChild(categoryText);
-        categoriesContainer.appendChild(categoryContainer);
-    });
+    createCategories(categories,categoriesGrid);
+    
 }
 
 async function getMoviesByCategory(id,name){
@@ -82,7 +89,26 @@ async function getTrendingMovies(){
 
     const { data } = await api('trending/movie/day');
     const movies = data.results;
-    console.log({data, movies});
     navLeftCategorieName.innerText = 'Tendencias';
     createMovies(movies, moviesGridCategories);
+}
+
+async function getMovieById(id){
+    const { data: movie } = await api('/movie/'+id);
+    console.log(movie);
+    movieDetailImg.setAttribute('src',`https://image.tmdb.org/t/p/w300/${movie.poster_path}`);
+    movieDetailTitle.innerText = movie.title;
+    movieDetailOver.innerText = movie.overview;
+    movieDetailRate.innerHTML = `<i class="bi-star-fill" style="color: #FF7A48; font-size: 20px; margin-right: 5px;" ></i>` + movie.vote_average;
+    createCategories(movie.genres, movieDetailCategories);
+    getRelatedMovies(id);
+
+
+}
+
+async function getRelatedMovies(id){
+
+    const { data  } = await api(`/movie/${id}/recommendations`);
+    const relatedMovies = data.results;
+    createMovies(relatedMovies,similarMoviesImg);
 }

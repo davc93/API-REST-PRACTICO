@@ -105,7 +105,6 @@ nav {
     overflow-y: hidden;
     white-space: nowrap;
     width: 300px;
-    height: 300px;
     margin-bottom: 19px;
 }
 .tendencies__img-list .img-container{
@@ -128,12 +127,13 @@ nav {
     margin: 0 4px;
 }
 
+.movie-detail article{
 
-.movie_detail{
-    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
-.movie_detail__description {
+.movie-detail__description {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -142,14 +142,41 @@ nav {
     
 }
 
-.movie_detail__description p:nth-child(2){
+.movie-detail__description p:nth-child(2){
     justify-self: end;
 }
 
-.movie_detail__description p:nth-child(3){
+.movie-detail__description p:nth-child(3){
 
     grid-column-start: 1;
     grid-column-end: 3;
+}
+
+.movie-detail__categories{
+
+    justify-self: start;
+    padding: 0 30px ;
+    margin-bottom: 30px;
+}
+
+.similar-movies--grid{
+
+    margin-top: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 300px;
+    margin-bottom: 19px;
+    
+
+}
+
+
+.similar-movies--grid .img-container{
+    margin-top: 0;
+    display: inline-block;
+    margin-right: 8px;
+
 }
 
 .categories-view{
@@ -179,6 +206,8 @@ nav {
     flex-direction: column;
     row-gap: 10px;
 }
+
+
 
 .search-section__input{
 
